@@ -1,0 +1,37 @@
+﻿@model CountryStateDDL.Models.CountryAndStateVM
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container bg-info">
+
+    <div class="jumbotron bg-success">
+
+        <h1>Country State selection</h1>
+    </div>
+
+        <div class="panel panel-body" style="min-height:256px">
+
+            <div class="col-md-3">
+
+                @DateTime.Now
+
+            </div>
+
+            <div class="col-md-9">
+
+                @if (ViewBag.CountryList != null)
+                {
+                    @Html.DropDownListFor(m => m.CountryId, ViewBag.CountryList as SelectList, "-- Select Country--", new { @class = "form-control" })
+
+                }
+                @Html.DropDownListFor(m => m.StateId, new SelectList(""), "--Select State--", new { @class = "form-control" })
+
+            </div>
+
+        </div>
+    
+
+
+</div>
